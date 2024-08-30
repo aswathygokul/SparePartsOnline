@@ -23,11 +23,22 @@
         <button type="submit">Search</button>
     </form>
 </nav>
+
+<!--modified
 <section class="section">
     <h2>Buy New Parts <span class="arrow down">&#9662;</span></h2>
     <div class="section-content">
         <p>Explore our wide range of brand-new spare parts that fit your vehicle perfectly.</p>
         <button onclick="window.location.href='/service/buy-new-parts.html}'">Proceed to Buy New Parts</button>
+    </div>
+</section>
+-->
+<section class="section">
+<h2>Buy New Parts <span class="arrow down">&#9662;</span></h2>
+    <div class="section-content">
+        <p>Explore our wide range of brand-new spare parts that fit your vehicle perfectly.</p>
+        <form action="/service/buy-new-parts" method="get">
+            <button type="submit">Buy New Parts</button></form>
     </div>
 </section>
 

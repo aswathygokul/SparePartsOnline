@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Buy New Parts</title>
@@ -11,6 +11,7 @@
  </header>
  <section>
    <p>Here you can explore and purchase new spare parts.</p>
+     <img th:src="@{/images/steering.jpg}" alt="steering">
  </section>
  <footer>
    <a href="/service">Back to Services</a>
