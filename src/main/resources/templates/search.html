@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Products</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<!-- Search Form -->
+<form th:action="@{/search}" method="get">
+  <input type="text" name="name" placeholder="Search for a product...">
+  <button type="submit">Search</button>
+</form>
+
+<!-- Display Search Results -->
+<div th:if="${products != null}">
+  <h2>Search Results</h2>
+  <div th:if="${products.isEmpty()}">
+    <p>No products found.</p>
+  </div>
+  <div th:if="${not products.isEmpty()}">
+    <ul>
+      <li th:each="product : ${products}">
+        <h3 th:text="${product.productName}"></h3>
+        <p>Brand: <span th:text="${product.productBrand}"></span></p>
+        <p>Model: <span th:text="${product.productModel}"></span></p>
+        <p>Year: <span th:text="${product.productYear}"></span></p>
+        <p>Price: $<span th:text="${product.productPrice}"></span></p>
+        <p>Availability: <span th:text="${product.availability ? 'In Stock' : 'Out of Stock'}"></span></p>
+
+        <!-- Display Product Image -->
+        <div th:if="${product.image != null}">
+          <img th:src="@{'/images/' + ${product.image}}" alt="Product Image" width="200" height="200">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

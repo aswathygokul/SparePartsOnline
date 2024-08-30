@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spare Parts Online</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <nav class="navbar">
+     <ul class="nav-links">
+         <li><a th:href="@{/}">AUTO PARTS CENTRAL</a></li>
+         <li><a th:href="@{/home}">Home</a></li>
+         <li><a th:href="@{/service}">Service</a></li>
+         <li><a th:href="@{/aboutUs}">About Us</a></li>
+         <li><a th:href="@{/contactUs}">Contact Us</a></li>
+         <li><a th:href="@{/login}">Login</a></li>
+
+     </ul>
+        <form class="search-form" th:action="@{/search}" method="get">
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+
+    <div class="content">
+        <h1><b>WELCOME</b></h1>
+    </div>
+
+</body>
+</html>

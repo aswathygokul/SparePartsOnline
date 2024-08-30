@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a th:href="@{/}">AUTO PARTS CENTRAL</a></li>
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/service}">Service</a></li>
+        <li><a th:href="@{/aboutUs}">About Us</a></li>
+        <li><a th:href="@{/contactUs}">Contact Us</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
+
+    </ul>
+    <form class="search-form" th:action="@{/search}" method="get">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</nav>
+<header>
+    <h1>Contact Us</h1>
+</header>
+<section>
+    <p>If you have any questions or need assistance, please feel free to reach out to us. We’re here to help!</p>
+
+    <h2>Contact Information</h2>
+    <p><strong>Phone:</strong> +1-234-567-890</p>
+    <p><strong>Email:</strong> support@sparepartsonline.com</p>
+    <p><strong>Address:</strong> 123 Spare Parts St., AutoCity, CA 94016</p>
+
+    <h2>Send Us a Message</h2>
+    <form action="/send-message" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+<footer>
+    <a href="/">Back to Home</a>
+</footer>
+</body>
+</html>

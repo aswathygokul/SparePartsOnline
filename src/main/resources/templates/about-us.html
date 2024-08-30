@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a th:href="@{/}">AUTO PARTS CENTRAL</a></li>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/service}">Service</a></li>
+            <li><a th:href="@{/aboutUs}">About Us</a></li>
+            <li><a th:href="@{/contactUs}">Contact Us</a></li>
+            <li><a th:href="@{/login}">Login</a></li>
+
+        </ul>
+        <form class="search-form" th:action="@{/search}" method="get">
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+
+    <h1>About Us</h1>
+</header>
+<section>
+    <p>Welcome to AutoParts Central, your go-to destination for high-quality car spare parts.</p>
+    <p>Since 2010, we've been committed to helping drivers and mechanics find the perfect parts to keep vehicles running smoothly and efficiently.</p>
+    <p>Contact us for more information about our products and services.</p>
+</section>
+<footer>
+    <a href="/">Back to Home</a>
+</footer>
+</body>
+</html>

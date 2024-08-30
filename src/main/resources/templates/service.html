@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Spare Parts Online</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a th:href="@{/}">AUTO PARTS CENTRAL</a></li>
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/service}">Service</a></li>
+        <li><a th:href="@{/aboutUs}">About Us</a></li>
+        <li><a th:href="@{/contactUs}">Contact Us</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
+
+    </ul>
+    <form class="search-form" th:action="@{/search}" method="get">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</nav>
+<section class="section">
+    <h2>Buy New Parts <span class="arrow down">&#9662;</span></h2>
+    <div class="section-content">
+        <p>Explore our wide range of brand-new spare parts that fit your vehicle perfectly.</p>
+        <button onclick="window.location.href='/service/buy-new-parts.html}'">Proceed to Buy New Parts</button>
+    </div>
+</section>
+
+
+<section class="section">
+        <h2>Buy Old Parts <span class="arrow down">&#9662;</span></h2>
+        <div class="section-content">
+            <p>Find quality used parts at affordable prices, fully inspected and tested.</p>
+            <button onclick="window.location.href='/service/buy-old-parts.html'">Proceed to Buy Old Parts</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Sale Old Parts <span class="arrow down">&#9662;</span></h2>
+        <div class="section-content">
+            <p>Sell your old vehicle parts easily through our platform and get the best deals.</p>
+            <button onclick> <a href="/sell-old-parts">Proceed to Sell Old Parts</a></button>
+        </div>
+    </section>
+
+    <footer>
+        <a href="/">Back to Home</a>
+    </footer>
+
+    <script>
+            document.querySelectorAll('.section').forEach(section => {
+                section.addEventListener('click', () => {
+                    const content = section.querySelector('.section-content');
+                    const arrow = section.querySelector('.arrow');
+                    content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+                    arrow.classList.toggle('up');
+                    arrow.classList.toggle('down');
+                });
+            });
+        </script>
+
+</body>
+</html>

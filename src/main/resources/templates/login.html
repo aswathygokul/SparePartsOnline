@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a th:href="@{/}">AUTO PARTS CENTRAL</a></li>
+    <li><a th:href="@{/home}">Home</a></li>
+    <li><a th:href="@{/service}">Service</a></li>
+    <li><a th:href="@{/aboutUs}">About Us</a></li>
+    <li><a th:href="@{/contactUs}">Contact Us</a></li>
+    <li><a th:href="@{/login}">Login</a></li>
+
+  </ul>
+  <form class="search-form" th:action="@{/search}" method="get">
+    <input type="text" name="query" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
+</nav>
+
+  <h1>Login</h1>
+</header>
+<section>
+  <form action="/perform-login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="/register">Register here</a></p>
+</section>
+<footer>
+  <a href="/">Back to Home</a>
+</footer>
+
+
+</body>
+</html>
