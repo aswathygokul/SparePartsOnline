@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buy-Payment Page</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+  <h1>Payment for Purchase</h1>
+</header>
+<section>
+    <p>Please fill in your payment details to complete the purchase.</p>
+
+
+        <div>
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" th:value="${productName}" readonly>
+        </div>
+
+        <div>
+            <label for="productPrice">Price:</label>
+            <input type="text" id="productPrice" name="productPrice" th:value="${productPrice}" readonly>
+        </div>
+        <div>
+            <label for="upiId">UPI ID:</label>
+            <input type="text" id="upiId" name="upiId" placeholder="your-upi-id@bank" required>
+        </div>
+    <form th:href="/buy-new-parts/buy-payment" method="post">
+        <button type="submit">Pay with UPI</button>
+    </form>
+
+    <h2>Or Scan the QR Code</h2>
+    <img th:src="@{/images/QRCode image.png}" alt="QRCode image">
+
+</section>
+<footer>
+    <a href="/service">Back to Services</a>
+</footer>
+</body>
+</html>

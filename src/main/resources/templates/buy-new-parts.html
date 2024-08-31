@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>Buy New Parts</title>
   <link rel="stylesheet" href="/css/styles.css">
+    <style>
+    .product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+    .product img {
+    max-width: 150px;
+    margin-right: 20px;
+    }
+    .product-details {
+    max-width: 500px;
+    }
+     </style>
 </head>
 <body>
  <header>
@@ -11,7 +25,18 @@
  </header>
  <section>
    <p>Here you can explore and purchase new spare parts.</p>
+     <div class="product">
      <img th:src="@{/images/steering.jpg}" alt="steering">
+         <div class="product-details">
+             <h2 th:text="${productName}">Steering</h2>
+             <p><strong>Brand:</strong> <span th:text="${productBrand}">ABC</span></p>
+             <p><strong>Model:</strong> <span th:text="${productModel}">2023</span></p>
+             <p><strong>Year:</strong> <span th:text="${productYear}">2023</span></p>
+             <p><strong>Price:</strong> <span th:text="${productPrice}">4500</span></p>
+             <p><strong>Availability:</strong> <span th:text="${availability}">In Stock</span></p>
+             <button type="submit">Buy</button>
+         </div>
+     </div>
  </section>
  <footer>
    <a href="/service">Back to Services</a>
