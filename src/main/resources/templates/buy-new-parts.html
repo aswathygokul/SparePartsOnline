@@ -34,7 +34,8 @@
              <p><strong>Year:</strong> <span th:text="${productYear}">2023</span></p>
              <p><strong>Price:</strong> <span th:text="${productPrice}">4500</span></p>
              <p><strong>Availability:</strong> <span th:text="${availability}">In Stock</span></p>
-             <button type="submit">Buy</button>
+             <form action="/buy-new-parts/buy-payment" method="get">
+                 <button type="submit">Buy</button></form>
          </div>
      </div>
  </section>
