@@ -43,12 +43,13 @@ public class ServiceController {
     }
 
     @GetMapping("/sell-old-parts")
-    public String sellOldPartsPage() {
+    public String sellOldPartsPage(Model model) {
+
 
         return "sell-old-parts";
     }
-        @PostMapping("/buy-payment")
-        public String upiPaymentPage(@RequestParam String productName,
+        @GetMapping("/buy-payment")
+        public String buyPaymentPage(@RequestParam String productName,
                                      @RequestParam String productPrice,
                                      @RequestParam String upiId,
                                      Model model) {
@@ -58,6 +59,8 @@ public class ServiceController {
             model.addAttribute("upiId", upiId);
             model.addAttribute("confirmationMessage", "UPI Payment initiated!");
 
-            return "payment-confirmation";
+            return "buy-payment";
         }
+
+
 }

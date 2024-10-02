@@ -4,57 +4,102 @@ package com.luminar.sparepartsonline.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "product")
+@Table(name="product")
 public class Product {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    private String name;
-    private String description;
-    private Double price;
-
+    private Integer productId;
+    private String productName;
+    private String productBrand;
+    private String productModel;
+    private Integer productYear;
+    private Double productPrice;
+    private Boolean availability;
+    private String image;
 
     public Product() {
     }
 
-    public Product(String name, String description, Double price) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
+    public Product(String productName, String productBrand, String productModel, Integer productYear, Double productPrice, Boolean availability, String image) {
+        this.productName = productName;
+        this.productBrand = productBrand;
+        this.productModel = productModel;
+        this.productYear = productYear;
+        this.productPrice = productPrice;
+        this.availability = availability;
+        this.image = image;
+    }
+
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getProductBrand() {
+        return productBrand;
+    }
+
+    public void setProductBrand(String productBrand) {
+        this.productBrand = productBrand;
     }
 
 
-    public Long getId() {
-        return id;
+    public String getProductModel() {
+        return productModel;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProductModel(String productModel) {
+        this.productModel = productModel;
     }
 
-    public String getName() {
-        return name;
+    public Integer getProductYear() {
+        return productYear;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductYear(Integer productYear) {
+        this.productYear = productYear;
     }
 
-    public String getDescription() {
-        return description;
+    public Double getProductPrice() {
+        return productPrice;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setProductPrice(Double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public Double getPrice() {
-        return price;
+    public Boolean getAvailability() {
+        return availability;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setAvailability(Boolean availability) {
+        this.availability = availability;
+
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+
+    }
+
+
 }
+

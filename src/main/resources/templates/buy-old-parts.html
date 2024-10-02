@@ -27,13 +27,15 @@
   <p>Here you can explore and purchase new spare parts.</p>
   <div class="product">
   <img th:src="@{/images/second hand steering.jpg}" alt="second hand steering">
-  <div class="product-details">
+  <div class="product">
     <h2 th:text="${productName}">Steering</h2>
     <p><strong>Brand:</strong> <span th:text="${productBrand}">XYZ</span></p>
     <p><strong>Model:</strong> <span th:text="${productModel}">2019</span></p>
     <p><strong>Year:</strong> <span th:text="${productYear}">2019</span></p>
     <p><strong>Price:</strong> <span th:text="${productPrice}">2500</span></p>
     <p><strong>Availability:</strong> <span th:text="${availability}">In Stock</span></p>
+    <form action="/buy-old-parts/buy-payment" method="get">
+      <button type="submit">Buy</button></form>
   </div>
   </div>
 

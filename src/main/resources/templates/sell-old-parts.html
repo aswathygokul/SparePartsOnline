@@ -1,19 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Sell Old Parts</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 <header>
-  <h1>Sell Old Parts</h1>
+  <h1>Sell Your Old Parts</h1>
 </header>
-<section>
-  <p>Sell your old vehicle parts easily through our platform.</p>
-</section>
-<footer>
-  <a href="/service">Back to Services</a>
-</footer>
+  <div class="container">
+    <form action="/sell-old-parts" method="POST" enctype="multipart/form-data">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" required>
+
+      <label for="productBrand">Brand:</label>
+      <input type="text" id="productBrand" name="productBrand" required>
+
+      <label for="productModel">Model:</label>
+      <input type="text" id="productModel" name="productModel" required>
+
+      <label for="productYear">Year:</label>
+      <input type="number" id="productYear" name="productYear" required>
+
+      <label for="productPrice">Price:</label>
+      <input type="number" id="productPrice" name="productPrice" required>
+
+      <label for="availability">Availability:</label>
+      <select id="availability" name="availability">
+        <option value="In Stock">In Stock</option>
+        <option value="Out of Stock">Out of Stock</option>
+      </select>
+
+      <label for="file">Upload Product Image:</label>
+      <input type="file" id="file" name="file" accept="image/*" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
 </body>
 </html>

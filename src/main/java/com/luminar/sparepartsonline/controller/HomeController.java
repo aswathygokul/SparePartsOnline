@@ -17,6 +17,10 @@ public class HomeController {
 
         return "home";
     }
+    @GetMapping("/home")
+    public String home(){
+        return "home";
+    }
 
     @GetMapping("/homeService")
     public String service() {
@@ -50,7 +54,7 @@ public class HomeController {
     }
     @GetMapping("/search")
     public String search(@RequestParam("query") String query, Model model){
-        model.addAttribute("results", searchService.findResults(query));
+        model.addAttribute("products", searchService.findResults(query));
         return "search-results";
 
     }

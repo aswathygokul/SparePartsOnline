@@ -1,18 +1,23 @@
 package com.luminar.sparepartsonline.service;
 
+import com.luminar.sparepartsonline.entity.Product;
+import com.luminar.sparepartsonline.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class SearchService {
-    public List<String> findResults(String query) {
 
-        List<String> allResults = Arrays.asList("Steering 1", "Steering 2", "Brake Pad", "Compressor");
-        return allResults.stream()
-                .filter(result -> result.toLowerCase().contains(query.toLowerCase()))
-                .toList();
+    private final ProductRepository productRepository;
+
+    @Autowired
+    public SearchService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
+    public List<Product> findResults(String query) {
+        return productRepository.findByProductNameContainingIgnoreCase(query);
+    }
 }

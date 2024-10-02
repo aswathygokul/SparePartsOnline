@@ -7,13 +7,13 @@
 </head>
 <body>
 
-<!-- Search Form -->
+
 <form th:action="@{/search}" method="get">
-  <input type="text" name="name" placeholder="Search for a product...">
+  <input type="text" name="query" placeholder="Search for a product...">
   <button type="submit">Search</button>
 </form>
 
-<!-- Display Search Results -->
+
 <div th:if="${products != null}">
   <h2>Search Results</h2>
   <div th:if="${products.isEmpty()}">
@@ -29,7 +29,7 @@
         <p>Price: $<span th:text="${product.productPrice}"></span></p>
         <p>Availability: <span th:text="${product.availability ? 'In Stock' : 'Out of Stock'}"></span></p>
 
-        <!-- Display Product Image -->
+
         <div th:if="${product.image != null}">
           <img th:src="@{'/images/' + ${product.image}}" alt="Product Image" width="200" height="200">
         </div>

@@ -21,7 +21,7 @@ public class OrderDetailsController {
     public String getAllOrders(Model model) {
         List<OrderDetails> orders = orderDetailsService.getAllOrders();
         model.addAttribute("orders", orders);
-        return "order-list"; // This is the view name
+        return "order-list";
     }
 
     @GetMapping("/orders/{id}")
